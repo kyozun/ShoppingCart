@@ -1,8 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using ShoppingCart.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+// Add DB context
+var connectionString = builder.Configuration.GetConnectionString("API");
+
+builder.Services.AddDbContext<Context>(
+    options => options.UseSqlServer(connectionString)
+) ;
 
 var app = builder.Build();
 
