@@ -8,7 +8,7 @@ public class Context : DbContext
     {
     }
     
-    public virtual DbSet<Order> Categories { get; set; }
+    public virtual DbSet<Order> Orders { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
 
